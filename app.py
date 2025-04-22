@@ -8,6 +8,7 @@ from streamlit import runtime
 from streamlit.web import cli as stcli
 import lightgbm
 import sys
+import joblib
 
 
 
