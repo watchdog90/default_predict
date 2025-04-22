@@ -4,3 +4,4 @@ numpy
 pickle
 lightgbm
 sys
+pip
