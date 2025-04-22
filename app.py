@@ -40,7 +40,7 @@ def web_app():
     st.subheader('⭐️ Default Customer prediction')
 
     # load model
-    loaded_model = pickle.load(open('/app/default_predict/trained_model.sav','rb'))
+    loaded_model = pickle.load(open('https://raw.githubusercontent.com/watchdog90/default_predict/main/trained_model.sav','rb'))
 
 
     # Code for prediction
