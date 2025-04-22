@@ -7,7 +7,6 @@ warnings.filterwarnings('ignore')
 from streamlit import runtime
 from streamlit.web import cli as stcli
 import lightgbm
-import seaborn as sns
 import sys
 
 
