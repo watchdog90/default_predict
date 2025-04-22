@@ -4,3 +4,4 @@ numpy
 lightgbm
 pip
 joblib
+requests
