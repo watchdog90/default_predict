@@ -23,7 +23,10 @@ def web_app():
 
     @st.cache_data(persist=True)
     def load_data():
-        data = pd.read_csv('/app/default_predict/streamtest.csv')
+        # Use raw GitHub URL (for public repos)
+        github_url = "https://raw.githubusercontent.com/watchdog90/default_predict/main/streamtest.csv"
+        data = pd.read_csv(github_url)
+        # data = pd.read_csv('/app/default_predict/streamtest.csv')
         return data
     
 
