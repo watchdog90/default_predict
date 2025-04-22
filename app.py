@@ -23,7 +23,7 @@ def web_app():
 
     @st.cache_data(persist=True)
     def load_data():
-        data = pd.read_csv('./data/streamtest.csv')
+        data = pd.read_csv('/app/default_predict/streamtest.csv')
         return data
     
 
@@ -37,7 +37,7 @@ def web_app():
     st.subheader('⭐️ Default Customer prediction')
 
     # load model
-    loaded_model = pickle.load(open('./trained_model.sav','rb'))
+    loaded_model = pickle.load(open('/app/default_predict/trained_model.sav','rb'))
 
 
     # Code for prediction
