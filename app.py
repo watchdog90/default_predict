@@ -87,6 +87,7 @@ def web_app():
 
         st.subheader('Prediction of High Potential Default Customer:')
         st.write(results)
+        st.balloons()
 
     if st.sidebar.checkbox('Find top 10 High Potential Default Customer', False):
         x_test = df
