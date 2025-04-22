@@ -40,7 +40,26 @@ def web_app():
     st.subheader('⭐️ Default Customer prediction')
 
     # load model
-    loaded_model = pickle.load(open('https://raw.githubusercontent.com/watchdog90/default_predict/main/trained_model.sav','rb'))
+    # Correct URL format:
+    model_url = "https://raw.githubusercontent.com/watchdog90/default_predict/main/trained_model.sav"
+    @st.cache_resource
+    def load_model():
+        try:
+            # For .pkl or .sav files:
+            response = requests.get(model_url)
+            model = joblib.load(io.BytesIO(response.content))
+            
+            # Alternative for pickle files:
+            # model = pd.read_pickle(io.BytesIO(response.content))
+            
+            return model
+        except Exception as e:
+            st.error(f"Failed to load model: {e}")
+            return None
+    
+    loaded_model = load_model()
+    if loaded_model:
+        st.success("Model loaded successfully!")
 
 
     # Code for prediction
